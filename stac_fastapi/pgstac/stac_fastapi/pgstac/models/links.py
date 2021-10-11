@@ -219,11 +219,13 @@ class ItemLinks(CollectionLinksBase):
         """Create the `tiles` link."""
         return dict(
             rel=Relations.alternate.value,
-            type=MimeTypes.json.value,
-            title="tiles",
-            href=self.resolve(
-                f"collections/{self.collection_id}/items/{self.item_id}/tiles",
-            ),
+            type=MimeTypes.html,
+            title="viewer",
+            # href=self.resolve(
+            #     f"collections/{self.collection_id}/items/{self.item_id}/tiles",
+            # ),
+            # href=f"http://localhost:8091/images/1km_6190_721/{self.item_id}/viewer.html",
+            href=f"https://skraafotodistribution-cogtileserv.k8s-test-121.septima.dk/images/1km_6190_721/{self.item_id}/viewer.html",
         )
 
 
